@@ -10,8 +10,9 @@ def getMessage():
 
 def getCipherKey():
     shiftAmount = input("Please enter a key (whole number from 1-25): ")
-    return shiftAmount
-
+    if int(shiftAmount) in range(-24, 25):
+        return shiftAmount
+    return getCipherKey()
 
 def encryptMessage(message, cipherKey, alphabet):
     encryptedMessage = ""
